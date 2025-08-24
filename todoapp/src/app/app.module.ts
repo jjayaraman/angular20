@@ -8,18 +8,14 @@ import { BodyComponent } from './components/body/body.component';
 import { TodoitemComponent } from './components/todoitem/todoitem.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { TodoService } from './service/todo.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    BodyComponent,
-    TodoitemComponent,
-    TodolistComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [TodoService],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        BodyComponent,
+        TodoitemComponent,
+        TodolistComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule, AppRoutingModule], providers: [TodoService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
