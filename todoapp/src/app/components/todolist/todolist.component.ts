@@ -2,9 +2,10 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { TodoService } from 'src/app/service/todo.service';
 
 @Component({
-  selector: 'app-todolist',
-  templateUrl: './todolist.component.html',
-  styleUrls: ['./todolist.component.scss'],
+    selector: 'app-todolist',
+    templateUrl: './todolist.component.html',
+    styleUrls: ['./todolist.component.scss'],
+    standalone: false
 })
 export class TodolistComponent implements OnInit {
   todoService = inject(TodoService);
