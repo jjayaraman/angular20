@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodolistComponent } from '../todolist/todolist.component';
+import { TodolistComponent } from '../todo/todolist/todolist.component';
 
 @Component({
   selector: 'app-body',
